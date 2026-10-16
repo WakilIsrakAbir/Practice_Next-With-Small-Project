@@ -173,11 +173,6 @@ export default function CgpaCalculator() {
               <span className="text-base font-bold text-white">{stats.totalCredits}</span>
             </div>
 
-            <div className="flex items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-950/70 px-3.5 py-2">
-              <span className="text-[11px] text-zinc-400 uppercase">Points:</span>
-              <span className="text-base font-bold text-cyan-400">{stats.semesterPoints.toFixed(1)}</span>
-            </div>
-
             <button
               onClick={handleReset}
               className="rounded-xl border border-zinc-700/80 px-3.5 py-2 text-xs font-medium text-zinc-300 transition hover:bg-zinc-800 hover:text-white"
