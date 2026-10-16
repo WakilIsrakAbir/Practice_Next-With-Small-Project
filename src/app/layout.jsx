@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "CalcHub - CGPA & Standard Calculator",
+  title: "Practice Next - CGPA & Standard Calculator",
   description: "Calculate your university CGPA or perform standard mathematical operations with precision.",
 };
 

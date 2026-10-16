@@ -2,7 +2,7 @@ import Link from "next/link";
 import Calculator from "@/components/Calculator";
 
 export const metadata = {
-  title: "Normal Calculator - CalcHub",
+  title: "Normal Calculator - Practice Next",
   description: "Perform standard calculations with ease.",
 };
 

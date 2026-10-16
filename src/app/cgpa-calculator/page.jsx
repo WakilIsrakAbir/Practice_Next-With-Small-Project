@@ -2,7 +2,7 @@ import Link from "next/link";
 import CgpaCalculator from "@/components/CgpaCalculator";
 
 export const metadata = {
-  title: "CGPA Calculator - CalcHub",
+  title: "CGPA Calculator - Practice Next",
   description: "Calculate your semester GPA and cumulative CGPA dynamically.",
 };
 
