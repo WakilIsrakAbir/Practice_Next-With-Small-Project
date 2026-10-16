@@ -130,78 +130,67 @@ export default function CgpaCalculator() {
 
   return (
     <div className="mx-auto w-full max-w-4xl space-y-6">
-      {/* Hero Overview Card */}
-      <div className="relative overflow-hidden rounded-3xl border border-zinc-200/80 bg-zinc-900 p-6 text-zinc-100 shadow-xl dark:border-zinc-800 sm:p-8">
-        {/* Subtle decorative background glow */}
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-indigo-500/20 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-cyan-500/15 blur-3xl" />
+      {/* Summary Header Card */}
+      <div className="relative overflow-hidden rounded-2xl border border-zinc-200/80 bg-zinc-900 p-5 text-zinc-100 shadow-lg dark:border-zinc-800">
+        {/* Subtle decorative glow */}
+        <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-indigo-500/15 blur-2xl" />
+        <div className="pointer-events-none absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-cyan-500/10 blur-2xl" />
 
-        <div className="relative z-10 flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
+        <div className="relative z-10 flex flex-col justify-between gap-4 md:flex-row md:items-center">
           {/* Main Score Display */}
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              <span className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-2.5">
+              <span className="text-[11px] font-semibold uppercase tracking-wider text-zinc-400">
                 {includePrevious ? "Overall Cumulative CGPA" : "Semester GPA"}
               </span>
               <span
-                className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium ${stats.badgeColor}`}
+                className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[11px] font-medium ${stats.badgeColor}`}
               >
                 <span className={`h-1.5 w-1.5 rounded-full ${stats.dotColor} animate-pulse`} />
                 {stats.standing}
               </span>
             </div>
 
-            <div className="flex items-baseline gap-3">
-              <span className="text-6xl font-black tracking-tight text-white sm:text-7xl">
+            <div className="flex items-baseline gap-2">
+              <span className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
                 {(includePrevious ? stats.cumulativeCgpa : stats.semesterGpa).toFixed(2)}
               </span>
-              <span className="text-sm font-medium text-zinc-400">/ 4.00 Scale</span>
+              <span className="text-xs font-medium text-zinc-400">/ 4.00 Scale</span>
             </div>
 
             {includePrevious && (
-              <p className="text-xs text-zinc-400">
-                Current Semester GPA:{" "}
+              <p className="text-[11px] text-zinc-400">
+                Semester GPA:{" "}
                 <span className="font-semibold text-zinc-200">{stats.semesterGpa.toFixed(2)}</span>
               </p>
             )}
           </div>
 
           {/* Quick Metrics & Actions */}
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center lg:flex-col lg:items-end">
-            <div className="grid grid-cols-2 gap-3 sm:flex">
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-950/70 px-4 py-3 text-center sm:min-w-[120px]">
-                <span className="text-[11px] font-medium uppercase tracking-wider text-zinc-400">
-                  Total Credits
-                </span>
-                <div className="mt-1 text-2xl font-bold text-white">
-                  {stats.totalCredits}
-                </div>
-              </div>
-
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-950/70 px-4 py-3 text-center sm:min-w-[120px]">
-                <span className="text-[11px] font-medium uppercase tracking-wider text-zinc-400">
-                  Quality Points
-                </span>
-                <div className="mt-1 text-2xl font-bold text-cyan-400">
-                  {stats.semesterPoints.toFixed(1)}
-                </div>
-              </div>
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+            <div className="flex items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-950/70 px-3.5 py-2">
+              <span className="text-[11px] text-zinc-400 uppercase">Credits:</span>
+              <span className="text-base font-bold text-white">{stats.totalCredits}</span>
             </div>
 
-            <div className="flex items-center gap-2">
-              <button
-                onClick={handleReset}
-                className="rounded-xl border border-zinc-700/80 px-4 py-2 text-xs font-semibold text-zinc-300 transition hover:bg-zinc-800 hover:text-white"
-              >
-                Reset
-              </button>
-              <button
-                onClick={addCourse}
-                className="rounded-xl bg-indigo-600 px-4 py-2 text-xs font-semibold text-white shadow-md shadow-indigo-600/30 transition hover:bg-indigo-500"
-              >
-                + Add Course
-              </button>
+            <div className="flex items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-950/70 px-3.5 py-2">
+              <span className="text-[11px] text-zinc-400 uppercase">Points:</span>
+              <span className="text-base font-bold text-cyan-400">{stats.semesterPoints.toFixed(1)}</span>
             </div>
+
+            <button
+              onClick={handleReset}
+              className="rounded-xl border border-zinc-700/80 px-3.5 py-2 text-xs font-medium text-zinc-300 transition hover:bg-zinc-800 hover:text-white"
+            >
+              Reset
+            </button>
+
+            <button
+              onClick={addCourse}
+              className="rounded-xl bg-indigo-600 px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-indigo-500"
+            >
+              + Add Course
+            </button>
           </div>
         </div>
       </div>
