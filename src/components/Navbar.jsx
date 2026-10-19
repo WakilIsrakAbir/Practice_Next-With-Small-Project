@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { href: "/cgpa-calculator", label: "CGPA" },
   { href: "/calculator", label: "Calculator" },
   { href: "/charecter-calculator", label: "Character Counter" },
+  { href: "/countrys", label: "Countrys" },
 ];
 
 export default function Navbar() {
