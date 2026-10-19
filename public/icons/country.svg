@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <defs>
+    <linearGradient id="grad-country" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+  </defs>
+  <!-- Background rounded card -->
+  <rect x="6" y="6" width="52" height="52" rx="14" fill="url(#grad-country)" />
+
+  <!-- Globe Outline -->
+  <circle cx="32" cy="32" r="16" stroke="#ffffff" stroke-width="2.5" />
+  
+  <!-- Globe Meridians & Equator -->
+  <path d="M16 32h32" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+  <ellipse cx="32" cy="32" rx="7.5" ry="16" stroke="#ffffff" stroke-width="2" />
+  <path d="M19.5 22.5c3.5 2.5 8 3.5 12.5 3.5s9-1 12.5-3.5" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" />
+  <path d="M19.5 41.5c3.5-2.5 8-3.5 12.5-3.5s9 1 12.5 3.5" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" />
+
+  <!-- Location Pin / Highlight -->
+  <circle cx="43" cy="21" r="3" fill="#fef08a" />
+</svg>

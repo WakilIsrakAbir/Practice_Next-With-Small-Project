@@ -15,7 +15,7 @@ export default function Home() {
           Select one of the tools below to get started.
         </p>
 
-        {/* 2 Cards in One Row Grid (2 Columns) */}
+        {/* 2x2 Grid of Cards (2 Columns) */}
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {/* Card 1: CGPA Calculator (Indigo Theme) */}
           <Link
@@ -99,7 +99,7 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Card 3: Character Counter (Emerald / Typography Theme - Unique from Normal Calculator) */}
+          {/* Card 3: Character Counter (Emerald Theme) */}
           <Link
             href="/charecter-calculator"
             className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-zinc-200/80 bg-white p-8 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/10 dark:border-zinc-800 dark:bg-zinc-900/70 dark:hover:border-emerald-500/80"
@@ -137,6 +137,47 @@ export default function Home() {
             {/* Action link */}
             <div className="mt-8 flex items-center font-semibold text-emerald-600 transition-colors group-hover:text-emerald-700 dark:text-emerald-400 dark:group-hover:text-emerald-300">
               <span>Open Character Counter &rarr;</span>
+            </div>
+          </Link>
+
+          {/* Card 4: Countries Visited Tracker (Amber/Orange Theme) */}
+          <Link
+            href="/countrys"
+            className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-zinc-200/80 bg-white p-8 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-400 hover:shadow-xl hover:shadow-amber-500/10 dark:border-zinc-800 dark:bg-zinc-900/70 dark:hover:border-amber-500/80"
+          >
+            <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-amber-500/10 blur-2xl transition-all duration-500 group-hover:bg-amber-500/20" />
+
+            <div>
+              {/* Globe / Country Icon */}
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-50 p-2.5 ring-1 ring-amber-500/20 transition-transform duration-300 group-hover:scale-110 dark:bg-amber-950/60 dark:ring-amber-500/30">
+                <img
+                  src="/icons/country.svg"
+                  alt="Countries Visited"
+                  className="h-full w-full object-contain"
+                />
+              </div>
+
+              <h2 className="mt-6 text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+                Countries Visited
+              </h2>
+              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                Keep track of all the countries you have traveled to and manage your visited list dynamically.
+              </p>
+
+              {/* Tags */}
+              <div className="mt-4 flex flex-wrap gap-1.5">
+                <span className="rounded-md bg-zinc-100 px-2.5 py-1 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">
+                  Travel Tracker
+                </span>
+                <span className="rounded-md bg-zinc-100 px-2.5 py-1 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">
+                  State Managed
+                </span>
+              </div>
+            </div>
+
+            {/* Action link */}
+            <div className="mt-8 flex items-center font-semibold text-amber-600 transition-colors group-hover:text-amber-700 dark:text-amber-400 dark:group-hover:text-amber-300">
+              <span>Open Countries Tracker &rarr;</span>
             </div>
           </Link>
         </div>
