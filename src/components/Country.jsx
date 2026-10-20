@@ -5,10 +5,14 @@ export default function Country({ country, handleVisited }) {
   const [visited, setVisited] = useState(false);
   const { name, flags, capital, population, region } = country;
 
-  const handleClick = () => {
-    if (!visited) {
-      setVisited(true);
-      handleVisited(); // Increase count by addition
+  // Toggle visited state (true <-> false)
+  const handleToggle = () => {
+    const nextVisited = !visited;
+    setVisited(nextVisited);
+
+    // Update parent count (+1 if visited, -1 if unvisited)
+    if (handleVisited) {
+      handleVisited(nextVisited);
     }
   };
 
@@ -30,9 +34,17 @@ export default function Country({ country, handleVisited }) {
 
         {/* Country Details */}
         <div className="mt-4 space-y-1.5">
-          <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
-            {name?.common}
-          </h3>
+          <div className="flex items-center justify-between">
+            <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
+              {name?.common}
+            </h3>
+            {visited && (
+              <span className="text-xs font-bold text-amber-500">
+                ✓ Visited
+              </span>
+            )}
+          </div>
+
           <p className="text-sm text-zinc-500 dark:text-zinc-400">
             <strong>Capital:</strong> {capital?.capital?.[0] || "N/A"}
           </p>
@@ -45,9 +57,9 @@ export default function Country({ country, handleVisited }) {
         </div>
       </div>
 
-      {/* Visited Button */}
+      {/* Visited Toggle Button */}
       <button
-        onClick={handleClick}
+        onClick={handleToggle}
         className={`mt-5 w-full rounded-xl py-2.5 text-sm font-semibold transition active:scale-95 ${
           visited
             ? "bg-amber-500 text-black hover:bg-amber-400"

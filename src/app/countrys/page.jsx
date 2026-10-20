@@ -13,9 +13,9 @@ export default function CountriesPage() {
       .then((data) => setCountries(data));
   }, []);
 
-  // Increase visited count by addition
-  const handleVisited = () => {
-    setVisitedCount(visitedCount + 1);
+  // Update visited count (+1 when marked visited, -1 when unvisited)
+  const handleVisited = (isVisited) => {
+    setVisitedCount((prev) => (isVisited ? prev + 1 : prev - 1));
   };
 
   return (
